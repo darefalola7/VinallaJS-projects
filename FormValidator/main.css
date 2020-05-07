@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.form__block {
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.form__block__heading {
+  text-align: center;
+  text-transform: capitalize;
+  margin: 1rem 0;
+}
+
+.form {
+  font-size: 1.6rem;
+}
+
+.form__group {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.form__label {
+  width: 100%;
+  display: inline-block;
+  margin: 0.5rem 0;
+  font-size: 1.6rem;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.form__input:focus {
+  border-bottom: 2px solid #ff6e6e;
+}
+
+.form__button {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0.75rem;
+  border: 0;
+  color: #fff;
+  background-color: #4580ff;
+}
+/*# sourceMappingURL=main.css.map */
