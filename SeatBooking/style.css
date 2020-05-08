@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #242333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  color: #fff;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  /* padding: 1rem; */
+  /* height: 40rem; */
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+}
+
+.modal h2 {
+  background-color: turquoise;
+  text-align: center;
+  padding: 1rem;
+}
+
+.modal h2:last-of-type {
+  background-color: yellow;
+}
+
+.modal ul {
+  list-style: none;
+}
+
+.modal .seats {
+  padding: 1rem;
+  background-color: tomato;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.modal li {
+  font-size: 1.6rem;
+}
+
+.modal div:last-of-type {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal .cost {
+  background-color: rgb(0, 98, 128);
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+
+.modal button {
+  padding: 0.75rem 3rem;
+  margin: 0.5rem;
+  border: none;
+}
+
+.modal .buttons {
+  margin-top: 3rem;
+}
+
+.modal div:last-of-type button:nth-of-type(1) {
+  background-color: red;
+}
+
+.modal div:last-of-type button:nth-of-type(2) {
+  background-color: green;
+}
+
+#complete {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.6rem;
+}
+#clear {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.6rem;
+}
+
+#cust-name {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+.movie-container {
+  margin: 3rem 0;
+}
+
+.movie-container select {
+  background-color: #fff;
+  border: 0;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.showcase {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 30rem;
+  background-color: #0e0d13;
+  margin-bottom: 4rem;
+}
+
+.showcase li {
+  flex: 1;
+  display: flex;
+}
+
+.showcase li small {
+  align-self: center;
+  font-size: 1.4rem;
+}
+
+.screen {
+  width: 25rem;
+  height: 7rem;
+  /* background-color: #fff; */
+  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.screen::before {
+  content: '';
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 7% 100%);
+  background-color: #fff;
+  width: 25rem;
+  height: 7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  margin-bottom: 4rem;
+}
+
+.movie-section {
+  display: flex;
+}
+
+.seat-name {
+  margin-right: 2rem;
+  position: relative;
+  top: 5rem;
+}
+
+.seat-name .names {
+  background-color: #444451;
+  height: 3rem;
+  width: 3rem;
+  text-align: center;
+  margin: 0.6rem;
+  vertical-align: middle;
+  line-height: 3rem;
+  font-size: 1.6rem;
+  background-color: rgb(119, 0, 255);
+}
+
+.seats .header-row {
+  display: flex;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.seats .header-row .seat {
+  background-color: rgb(119, 0, 255);
+}
+
+.seats .header-row div:nth-of-type(2) {
+  margin-right: 3rem;
+}
+
+.seats .header-row div:nth-of-type(6) {
+  margin-right: 3rem;
+}
+
+.row {
+  display: flex;
+}
+
+.container .row div:nth-of-type(2) {
+  margin-right: 3rem;
+}
+
+.container .row div:nth-of-type(6) {
+  margin-right: 3rem;
+}
+
+.seat {
+  background-color: #444451;
+  height: 3rem;
+  width: 3rem;
+  margin: 3px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 3rem;
+  font-size: 1.6rem;
+}
+
+.selected {
+  background-color: turquoise;
+}
+
+.occupied {
+  background-color: #fff;
+}
+
+.text {
+  font-size: 1.6rem;
+}
+
+.text span {
+  color: turquoise;
+}
