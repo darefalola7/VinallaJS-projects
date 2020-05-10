@@ -1,27 +1,37 @@
 import { Customer } from './Customer.js';
+import { elements } from './base.js';
+import { Movie } from './movie.js';
+import { MovieView } from './movieView.js';
 
 class App {
-  constructor(customerName) {
-    this.select = document.querySelector('#movie');
-    this.customer = new Customer(
-      customerName,
-      this.select.options[this.select.selectedIndex].text,
-      this.select.options[this.select.selectedIndex].value
-    );
-    this.nameLabel = document.getElementById(
-      'cust-name'
-    ).textContent = `Customer Name: ${customerName}`;
-    // globalThis.cust = this.customer;
-    this.textCount = document.getElementById('count');
-    this.textPrice = document.getElementById('total');
-    this.coverRow = document.getElementById('cover-row');
-    this.complete = document.getElementById('complete');
-    this.clear = document.getElementById('clear');
+  constructor(customerName, movies) {
+    this.capture = false;
+    this.customer = new Customer(customerName, '', 0);
+    elements.nameLabel.textContent = `Customer Name: ${customerName}`;
+    this.currentWidth = 0;
+    this.counter = 1;
+    this.start = true;
+    this.movies = movies;
+    this.mView = new MovieView(movies);
+    elements.slides = document.querySelectorAll('.mySlides');
+    this.width = elements.slides[0].offsetWidth;
     this.loadData();
-    this.complete.addEventListener('click', this.completeHandler.bind(this));
-    this.clear.addEventListener('click', this.clearHandler.bind(this));
-    this.coverRow.addEventListener('click', this.runHandler.bind(this));
-    this.select.addEventListener('change', this.changeHandler.bind(this));
+    elements.complete.addEventListener(
+      'click',
+      this.completeHandler.bind(this)
+    );
+    elements.clear.addEventListener('click', this.clearHandler.bind(this));
+    elements.coverRow.addEventListener('click', this.runHandler.bind(this));
+    elements.prev.addEventListener('click', this.prevHandler.bind(this));
+    elements.next.addEventListener('click', this.nextHandler.bind(this));
+    elements.slidesContainer.addEventListener(
+      'click',
+      this.selectMovieHandler.bind(this)
+    );
+    // elements.slidesContainer.addEventListener(
+    //   'mouseover',
+    //   this.hoverMovieHandler.bind(this)
+    // );
   }
 
   loadData() {
@@ -53,12 +63,12 @@ class App {
     });
 
     if (extractedData) {
-      const index = Array.from(this.select.options).findIndex(
-        option => option.text === extractedData.name
-      );
-      this.select.selectedIndex = index >= 0 ? index : 0;
-      this.customer.movieName = extractedData.name;
-      this.setTextData(this.customer.seatCount(), this.customer.totalPrice);
+      // const index = Array.from(this.select.options).findIndex(
+      //   option => option.text === extractedData.name
+      // );
+      // this.select.selectedIndex = index >= 0 ? index : 0;
+      // this.customer.movieName = extractedData.name;
+      // this.setTextData(this.customer.seatCount(), this.customer.totalPrice);
     }
   }
 
@@ -96,13 +106,13 @@ class App {
       <button>Pay</button>
     </div>
     `;
-      let temp = document.getElementsByTagName('template')[0];
+      let temp = document.getElementById('backdrop-modal');
       let clon = temp.content.cloneNode(true);
       const modal = clon.querySelector('.modal');
       const backdrop = clon.querySelector('.backdrop');
       modal.innerHTML = text;
-      globalThis.clon = clon;
-      globalThis.modal1 = modal;
+      // globalThis.clon = clon;
+      // globalThis.modal1 = modal;
       document.body.appendChild(clon);
 
       const cancelbutton = document.body.querySelector(
@@ -142,6 +152,9 @@ class App {
   }
 
   runHandler(event) {
+    if (this.customer.moviePrice === 0) {
+      alert('Please select a movie first!');
+    }
     const element = event.target;
     const elementId = element.dataset.movieid;
     if (elementId) {
@@ -171,6 +184,98 @@ class App {
       .value;
     this.setTextData(this.customer.seatCount(), this.customer.totalPrice);
   }
+
+  prevHandler(event) {
+    // console.log('Prev: Listening...');
+    if (this.currentWidth > 0) {
+      this.counter--;
+      // console.log('prev', currentWidth, counter * width);
+      if (this.currentWidth === this.counter * this.width) this.counter--;
+      // console.log('prev', width * counter);
+      elements.slides.forEach(slide => {
+        slide.style.transform = `translateX(-${this.width * this.counter}px)`;
+      });
+      this.currentWidth = this.width * this.counter;
+    }
+  }
+
+  nextHandler(event) {
+    // console.log(elements.slides);
+    // console.log('Next: Listening...');
+    if (this.currentWidth === 0 && !this.start) this.counter++;
+    this.start = false;
+    // console.log('next', this.currentWidth, this.counter * this.width);
+    if (
+      this.currentWidth <
+      this.width * elements.slides.length - this.width * 4
+    ) {
+      // console.log('next', this.width * this.counter);
+      elements.slides.forEach(slide => {
+        slide.style.transform = `translateX(-${this.width * this.counter}px)`;
+      });
+      this.currentWidth = this.width * this.counter;
+      this.counter++;
+    }
+  }
+
+  selectMovieHandler(event) {
+    // Get movie id
+    const div = event.target.closest('.mySlides');
+    const id = div.dataset.params;
+    const movie = this.movies.find(mov => mov.id == id);
+    if (id) {
+      this.customer.moviePrice = div.dataset.price;
+      this.customer.movieName = movie.title;
+      div.style.color = 'red';
+      // Render movie details
+      this.mView.renderMovies(movie);
+      // Show movie
+
+      console.log(movie);
+      console.log(event);
+    }
+  }
+
+  hoverMovieHandler(event) {
+    const div = event.target.closest('.mySlides');
+    const id = div.dataset.params;
+
+    if (id && !this.capture) {
+      this.capture = true;
+      // Render movie details
+      // div.style.transformOrigin = 'center';
+      // div.style.transform = 'scale(1.5)';
+      // div.style.width = div.clientWidth + 100 + 'px';
+      // div.style.zIndex = 20;
+      // Show movie
+      const movie = this.movies.find(mov => mov.id == id);
+      const movieHtml = `
+        <div class="video">
+          <iframe
+            width="${div.clientWidth}"
+            height="${div.clientHeight}"
+            src="https://www.youtube.com/embed/${movie.videoID}?controls=0&loop=1&autoplay=1"
+            allow="autoplay; encrypted-media" allowfullscreen>
+          </iframe>
+        </div>
+      `;
+      const temp = div.innerHTML;
+      div.innerHTML = '';
+      div.insertAdjacentHTML('afterbegin', movieHtml);
+      div.addEventListener('mouseleave', event => {
+        div.innerHTML = '';
+        div.insertAdjacentHTML('afterbegin', temp);
+        this.capture = false;
+      });
+      // console.log(id);
+      // console.log(event);
+    }
+  }
 }
 
-new App('George Randolf');
+const movie = new Movie(500);
+movie.getMovies().then(movies => {
+  console.log(movies);
+  localStorage.setItem('movies', JSON.stringify(movies));
+  new App('George Randolf', movies);
+});

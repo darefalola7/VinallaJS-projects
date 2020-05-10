@@ -16,10 +16,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
   font-family: 'Lato', sans-serif;
   margin: 0;
   color: #fff;
+  overflow: scroll;
 }
 
 .backdrop {
@@ -98,6 +99,64 @@ body {
   background-color: green;
 }
 
+.element-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 40rem; */
+  /* padding: 1rem; */
+  /* height: 40rem; */
+  background-color: #fff;
+  color: #000;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  border: 2px solid red;
+  /* overflow: scroll; */
+}
+
+.element-container ul {
+  list-style: none;
+  /* padding: 0 2rem; */
+}
+
+.element-container ul li {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
+.element-container ul li:nth-of-type(even) {
+  /* background: linear-gradient(
+    90deg,
+    rgba(114, 2, 126, 1) 0%,
+    rgba(121, 52, 9, 1) 51%,
+    rgba(236, 239, 240, 1) 100%
+  ); */
+  background-color: rgb(75, 74, 74);
+  color: #fff;
+}
+
+.element-container ul li:nth-of-type(odd) {
+  /* background: linear-gradient(
+    90deg,
+    rgba(114, 2, 126, 1) 0%,
+    rgba(121, 9, 109, 1) 53%,
+    rgba(236, 239, 240, 1) 100%
+  ); */
+  background-color: #ccc;
+}
+
+.element-container .overview {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  text-align: justify;
+  background-color: rgb(75, 74, 74);
+  color: #fff;
+  /* border-top: 5px solid chocolate; */
+}
+
 #complete {
   padding: 0.5rem 1.5rem;
   font-size: 1.6rem;
@@ -105,6 +164,73 @@ body {
 #clear {
   padding: 0.5rem 1.5rem;
   font-size: 1.6rem;
+}
+
+.s-container {
+  position: relative;
+  max-width: 80rem;
+  height: 30rem;
+  margin: 2rem 0;
+}
+
+.slideshow-container {
+  max-width: 80rem;
+  height: 30rem;
+  overflow: hidden;
+  /* white-space: nowrap; */
+  display: flex;
+}
+
+.mySlides {
+  min-width: 20rem;
+  height: 30rem;
+  background-color: brown;
+  border: 1px solid white;
+  position: relative;
+  transition: all 0.3s ease;
+  /* overflow: visible; */
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  /* left: 0; */
+  width: 5rem;
+  height: 5rem;
+  /* background-color: #fff; */
+  /* border-radius: 50%; */
+  vertical-align: middle;
+  color: #fff;
+  line-height: 5rem;
+  text-align: center;
+  font-size: 5rem;
+  /* box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.3); */
+}
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(yellow, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 35px;
+  padding: 8px 12px;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
 }
 
 #cust-name {
@@ -125,25 +251,6 @@ body {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-}
-
-.showcase {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  width: 30rem;
-  background-color: #0e0d13;
-  margin-bottom: 4rem;
-}
-
-.showcase li {
-  flex: 1;
-  display: flex;
-}
-
-.showcase li small {
-  align-self: center;
-  font-size: 1.4rem;
 }
 
 .screen {
@@ -247,10 +354,85 @@ body {
   background-color: #fff;
 }
 
-.text {
+.bottom {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  align-items: flex-end;
+}
+
+.showcase {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 30rem;
+  background-color: #0e0d13;
+  /* margin-bottom: 4rem; */
+}
+
+.showcase li {
+  flex: 1;
+  display: flex;
+}
+
+.showcase li small {
+  align-self: center;
+  font-size: 1.4rem;
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+.price-info-text {
   font-size: 1.6rem;
 }
 
-.text span {
+.price-info-text span {
   color: turquoise;
 }
+
+figure {
+  /* border: thin #c0c0c0 solid; */
+  display: flex;
+  flex-flow: column;
+  /* padding: 5px; */
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+figcaption {
+  background-color: rgba(#222, 0.5);
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  position: relative;
+  top: -3rem;
+  text-align: center;
+}
+
+.movie-selected {
+  border: 5px solid green;
+}
+
+/* .video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0; 
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}  */

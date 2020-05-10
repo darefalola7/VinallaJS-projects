@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Seat Booking</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
     <script type="module" src="app.js" defer></script>
   </head>
   <body>
-    <template>
+    <template id="backdrop-modal">
       <div class="backdrop"></div>
       <div class="modal"></div>
     </template>
+    <template id="movie-hover">
+      <div class="backdrop"></div>
+      <div class="element-container"></div>
+    </template>
+
     <label id="cust-name">Customer Name: </label>
-    <div class="movie-container">
+    <!-- <div class="movie-container">
       <label>Pick a movie:</label>
       <select id="movie">
         <option value="10">Avengers:Engame ($10)</option>
@@ -21,24 +30,52 @@
         <option value="8">Troy Story ($8)</option>
         <option value="9">The Lion King ($9)</option>
       </select>
+    </div> -->
+
+    <!-- Slideshow container -->
+    <div class="s-container">
+      <div class="slideshow-container">
+        <!-- <div class="mySlides anim">
+          <div class="text">Caption One</div>
+        </div>
+
+        <div class="mySlides anim">
+          <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides anim">
+          <div class="text">Caption Three</div>
+        </div>
+        <div class="mySlides anim">
+          <div class="text">Caption Four</div>
+        </div>
+
+        <div class="mySlides anim">
+          <div class="text">Caption Five</div>
+        </div>
+
+        <div class="mySlides anim">
+          <div class="text">Caption Six</div>
+        </div>
+        <div class="mySlides anim">
+          <div class="text">Caption Seven</div>
+        </div>
+
+        <div class="mySlides anim">
+          <div class="text">Caption Eight</div>
+        </div>
+
+        <div class="mySlides anim">
+          <div class="text">Caption Nine</div>
+        </div> -->
+      </div>
+      <!-- Next and previous buttons -->
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
     </div>
-    <ul class="showcase">
-      <li>
-        <div class="seat"></div>
-        <small>N/A</small>
-      </li>
-      <li>
-        <div class="seat selected"></div>
-        <small>Selected</small>
-      </li>
-      <li>
-        <div class="seat occupied"></div>
-        <small>Occupied</small>
-      </li>
-    </ul>
 
     <div class="container">
-      <div class="screen"></div>
+      <!-- <div class="screen"></div> -->
       <div class="movie-section">
         <div class="seat-name">
           <div class="names">A</div>
@@ -125,16 +162,51 @@
       </div>
     </div>
 
-    <p class="text">
-      You have selected <span id="count">0</span> seats for a price of $<span
-        id="total"
-        >0</span
-      >
-    </p>
-
-    <div class="buttons">
-      <button id="complete">Complete Purchase</button>
-      <button id="clear">Start Over</button>
+    <div class="bottom">
+      <ul class="showcase">
+        <li>
+          <div class="seat"></div>
+          <small>N/A</small>
+        </li>
+        <li>
+          <div class="seat selected"></div>
+          <small>Selected</small>
+        </li>
+        <li>
+          <div class="seat occupied"></div>
+          <small>Occupied</small>
+        </li>
+      </ul>
+      <div class="price-info">
+        <p class="price-info-text">
+          You have selected <span id="count">0</span> seats for a price of
+          $<span id="total">0</span>
+        </p>
+        <div class="buttons">
+          <button id="complete">Complete Purchase</button>
+          <button id="clear">Start Over</button>
+        </div>
+      </div>
     </div>
+
+    <!-- <div class="video">
+      <iframe
+        width="420"
+        height="315"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY"
+      >
+      </iframe>
+    </div> -->
+    <!-- <ul class="movielist">
+      <li>Budget: this.movie.budget</li>
+      <li>Revenue: this.movie.revenue</li>
+      <li>Production Companies: this.movie.prodCompanies</li>
+      <li>Production Countries: this.movie.prodCountries</li>
+      <li>Release Date: this.movie.release_date</li>
+      <li>Generes: this.movie.resData</li>      
+      <li>Runtime: this.movie.runtime</li>
+      <li>this.movie.tagline</li>
+      <li>this.movie.homepage</li>
+    </ul> -->
   </body>
 </html>
