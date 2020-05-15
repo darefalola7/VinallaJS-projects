@@ -1,0 +1,306 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto Mono', sans-serif;
+  line-height: 1.2;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.logo-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logo-img img {
+  width: 15rem;
+}
+
+.logo-img .main__heading {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  color: goldenrod;
+}
+
+.graph__heading {
+  margin-bottom: 1rem;
+  background-color: indigo;
+  border-radius: 3px;
+  padding: 1rem;
+  display: inline-block;
+  color: #fff;
+}
+
+.graphs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50rem;
+  margin-bottom: 2rem;
+}
+
+.graphs > *:not(:last-child) {
+  margin-right: 2rem;
+}
+
+#sevendays-chart {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 40rem;
+  height: 40rem !important;
+  -webkit-box-shadow: 3px 5px 1rem rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 5px 1rem rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+#thirtydays-chart {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 40rem;
+  height: 40rem !important;
+  -webkit-box-shadow: 3px 5px 1rem rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 5px 1rem rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+#sixtydays-chart {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 40rem;
+  height: 40rem !important;
+  -webkit-box-shadow: 3px 5px 1rem rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 5px 1rem rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main__info {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  margin: 0 5rem 0 0;
+  padding: 3rem;
+  -webkit-box-shadow: 0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.4);
+}
+
+.main__info__heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.main__convert {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-shadow: 0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.4);
+}
+
+.main .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .row:not(:last-child) {
+  margin-bottom: 3rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid indigo;
+}
+
+.main .slot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 1.6rem;
+}
+
+.main .slot img {
+  width: 5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 1rem;
+}
+
+.main .slot span {
+  color: indigo;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 2rem;
+}
+
+.main__convert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__convert .wrapper {
+  width: 100%;
+  padding: 1rem;
+}
+
+.main__convert__heading {
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+.main__convert .currency__box {
+  position: relative;
+}
+
+.main__convert .currency__box:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.main__convert .currency__box:nth-of-type(2) .currency__name {
+  background-color: white;
+}
+
+.main__convert .currency__box .currency__name {
+  position: absolute;
+  top: 2.1rem;
+  background-color: rgba(33, 252, 33, 0.5);
+  border-radius: 3px;
+  font-size: 2rem;
+}
+
+.main__convert .currency__box .currency__name select {
+  padding: 0.3rem;
+  font-size: 1.4rem;
+}
+
+.main__convert .currency__box input {
+  width: 100%;
+  border: 0;
+  padding: 1rem;
+  text-align: right;
+  font-size: 2.5rem;
+  font-weight: bold;
+  outline: none;
+  border-bottom: 3px solid indigo;
+}
+
+.main__convert .currency__box input::-webkit-input-placeholder {
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.main__convert .currency__box input:-ms-input-placeholder {
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.main__convert .currency__box input::-ms-input-placeholder {
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.main__convert .currency__box input::placeholder {
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.main__convert .clear {
+  text-align: center;
+}
+
+.main__convert .clear button {
+  border: none;
+  padding: 0.5rem 7.25rem;
+  border-radius: 3px;
+  background-color: indigo;
+  color: #fff;
+}
+
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: -ms-grid;
+  display: grid;
+  z-index: 1000;
+}
+
+.loader svg {
+  height: 15.5rem;
+  width: 15.5rem;
+  fill: #fff;
+  -webkit-transform-origin: 44% 50%;
+          transform-origin: 44% 50%;
+  -webkit-animation: rotate 1.5s infinite linear;
+          animation: rotate 1.5s infinite linear;
+  margin: auto;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=main.css.map */

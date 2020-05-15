@@ -4,6 +4,126 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exchange Rate</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script type="module" src="app.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div class="logo-img">
+      <h1 class="main__heading">Exchange Rate Calculator</h1>
+      <img src="./img/money.png" alt="money" />
+    </div>
+    <div class="container">
+      <h2 class="graph__heading">Naira Exchange rate in the last ...</h2>
+      <div class="graphs">
+        <canvas id="sevendays-chart"></canvas>
+        <canvas id="thirtydays-chart"></canvas>
+        <canvas id="sixtydays-chart"></canvas>
+      </div>
+      <div class="main">
+        <div class="main__info">
+          <h1 class="main__info__heading">
+            Lagos parallel market rates
+          </h1>
+          <div class="row">
+            <div class="slot">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/1280px-Flag_of_Nigeria.svg.png"
+                alt="Nigeria"
+              />
+              <span>NGN</span>
+            </div>
+            <div class="slot">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png"
+                alt="usa"
+              /><span>USA</span>
+            </div>
+            <div class="slot">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+                alt="UK"
+              /><span>UK</span>
+            </div>
+            <div class="slot">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/255px-Flag_of_Europe.svg.png"
+                alt="eu"
+              /><span>EU</span>
+            </div>
+          </div>
+          <div id="row-content">
+            <div class="row">
+              <div class="slot">Date</div>
+              <div class="slot" style="color: red;">Price</div>
+              <div class="slot">Price</div>
+              <div class="slot" style="color: red;">Price</div>
+            </div>
+            <div class="row">
+              <div class="slot">Date</div>
+              <div class="slot">Price</div>
+              <div class="slot" style="color: red;">Price</div>
+              <div class="slot">Price</div>
+            </div>
+            <div class="row">
+              <div class="slot">Date</div>
+              <div class="slot">Price</div>
+              <div class="slot">Price</div>
+              <div class="slot">Price</div>
+            </div>
+            <div class="row">
+              <div class="slot">Date</div>
+              <div class="slot">Price</div>
+              <div class="slot">Price</div>
+              <div class="slot">Price</div>
+            </div>
+          </div>
+        </div>
+        <div class="main__convert">
+          <div class="wrapper">
+            <h3 class="main__convert__heading">
+              Convert Currency
+            </h3>
+            <div class="currency__box">
+              <span class="currency__name">
+                NGN
+              </span>
+              <input
+                type="text"
+                class="currency__input"
+                id="currency__name1"
+                placeholder="Amount in Naira...."
+              />
+            </div>
+            <div class="currency__box">
+              <span class="currency__name" id="currency__name2">
+                <select class="currency">
+                  <option value="usd">USD</option>
+                  <option value="eur">EUR</option>
+                  <option value="gbp">GBP</option>
+                </select>
+              </span>
+              <input
+                type="text"
+                class="currency__input"
+                id="currency__name2"
+                placeholder="Amount in selected currency..."
+              />
+            </div>
+            <div class="clear">
+              <button>Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
