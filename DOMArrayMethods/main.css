@@ -1,0 +1,219 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 0.25rem;
+}
+
+.content-area {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  grid-gap: 2rem;
+  padding: 4rem 0;
+  width: 85rem;
+}
+
+.actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-right: 2rem;
+  height: 34rem;
+  border-right: 2px solid black;
+}
+
+.actions button {
+  border: 1px solid black;
+  padding: 0.75rem 2rem;
+  border-radius: 3px;
+  background-color: #ececec;
+  color: #000;
+}
+
+.view-area {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.view-area .slot {
+  color: #fff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  width: 100%;
+  height: 10rem;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+  border-left: 4px solid #b6314e;
+  overflow: hidden;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.view-area .slot:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.view-area .slot .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.view-area .slot .left .slot__image {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+}
+
+.view-area .slot .left .slot__image img {
+  border-radius: 50%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.view-area .slot .left .info .name {
+  font-size: 1.2rem;
+  letter-spacing: 0.25rem;
+  font-weight: 700;
+  height: 2rem;
+  margin: 1rem 0;
+}
+
+.view-area .slot .left .info ul {
+  list-style: none;
+  height: 2rem;
+}
+
+.view-area .slot .left .info ul li {
+  display: inline-block;
+  padding-right: 0.5rem;
+}
+
+.view-area .slot .left .info .loc {
+  width: 273px;
+}
+
+.view-area .slot .left .info .loc li:nth-of-type(1) {
+  text-transform: capitalize;
+  color: hotpink;
+}
+
+.view-area .slot .left .info .loc li:nth-of-type(2) {
+  background-color: red;
+  padding: 0.25rem;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.view-area .slot .left .info .loc li:nth-of-type(3) {
+  background-color: green;
+  padding: 0.25rem;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.view-area .slot .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.view-area .slot .right .networth {
+  height: 2.5rem;
+  width: 13rem;
+  text-align: right;
+}
+
+.loading {
+  position: relative;
+  background-color: #e2e2e2;
+  overflow: hidden;
+}
+
+.loading::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(rgba(255, 255, 255, 0.4)), to(transparent));
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  -webkit-animation: loading 1s infinite;
+          animation: loading 1s infinite;
+}
+
+@-webkit-keyframes loading {
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes loading {
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+/*# sourceMappingURL=main.css.map */
