@@ -80,4 +80,4 @@ class App {
   };
 }
 
-const app = new App(3);
+const app = new App(4);
