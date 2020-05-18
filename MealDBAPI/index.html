@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Finder</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script type="module" src="app.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="error"></div>
+      <h1 class="header">Meal Finder</h1>
+      <div class="search-container">
+        <form class="form">
+          <input
+            class="search__input"
+            type="text"
+            placeholder="Search for meals or keywords"
+          />
+          <button type="submit" class="search-btn">
+            <img src="./imgs/zoom.svg" alt="search" />
+          </button>
+
+          <button class="random">
+            <img src="./imgs/arrows-shuffle-symbol.svg" alt="random" />
+          </button>
+        </form>
+      </div>
+      <p class="search-results">Search results for 'steak'</p>
+      <div class="meal"></div>
+    </div>
+  </body>
+</html>

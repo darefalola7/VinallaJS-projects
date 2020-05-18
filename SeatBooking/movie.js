@@ -2,7 +2,7 @@
 // const axios = require('axios');
 
 export class Movie {
-  apiKey = '18a78b2a4ad87b25a7d21b4880b35ddc';
+  apiKey='Remember to replace this';
   constructor(imagesize) {
     this.movies = JSON.parse(localStorage.getItem('movies'));
     this.minimumDate = JSON.parse(localStorage.getItem('minimum'));

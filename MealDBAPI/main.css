@@ -1,0 +1,320 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #2d2013;
+  color: #fff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+.search-container {
+  margin-bottom: 3rem;
+}
+
+.search-container .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.search-container .form .search__input {
+  padding: 1rem;
+  width: 35rem;
+  border-radius: 5px;
+  border: none;
+  margin-right: 2rem;
+  font-size: 1.6rem;
+}
+
+.search-container .form .search__input:focus {
+  outline: none;
+}
+
+.search-container .form .search-btn {
+  width: 4rem;
+  height: 3.87rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  position: absolute;
+  right: 5.5rem;
+  cursor: pointer;
+}
+
+.search-container .form .search-btn:focus {
+  outline: none;
+}
+
+.search-container .form .search-btn img {
+  width: 60%;
+}
+
+.search-container .form .random {
+  width: 4rem;
+  height: 3.9rem;
+  padding: 0 0.25rem;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-container .form .random:focus {
+  outline: none;
+}
+
+.search-container .form .random:active {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
+.search-container .form .random img {
+  width: 100%;
+}
+
+.search-results {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 2rem 0;
+  display: none;
+}
+
+.meal {
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.meal__results {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.meal__result {
+  position: relative;
+  overflow: hidden;
+}
+
+.meal__result.skeleton {
+  width: 18rem;
+  height: 18rem;
+}
+
+.meal__result:hover::before,
+.meal__result:hover figcaption {
+  opacity: 1;
+}
+
+.meal__result:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.meal__result figure img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.meal__result figcaption {
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.meal__info {
+  width: 80%;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.meal__info h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.meal__video {
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+.meal__video img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.meal__video.skeleton {
+  width: 40rem;
+  height: 30rem;
+}
+
+.meal__categories {
+  width: 100%;
+  height: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 2rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 2px dotted gold;
+  margin-bottom: 3rem;
+}
+
+.meal__instruction {
+  width: 100%;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  text-align: justify;
+  margin-bottom: 3rem;
+}
+
+.meal__instruction.skeleton {
+  height: 30rem;
+}
+
+.meal__ingredient h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.meal__ingredients span {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.25rem 0.75rem;
+  background-color: #fff;
+  color: black;
+  font-size: 1.6rem;
+  margin: 0 5px 5px 0;
+}
+
+.meal__ingredients span.skeleton {
+  width: 10rem;
+  height: 3rem;
+}
+
+.loading {
+  position: relative;
+  background-color: #e0dede;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.loading::after {
+  display: block;
+  z-index: 1200;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(white), to(transparent));
+  background: linear-gradient(90deg, transparent, white, transparent);
+  -webkit-animation: loading 0.8s infinite;
+          animation: loading 0.8s infinite;
+}
+
+@-webkit-keyframes loading {
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes loading {
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+.error {
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  vertical-align: middle;
+  background-color: rgba(255, 0, 0, 0.6);
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.25rem;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+/*# sourceMappingURL=main.css.map */
