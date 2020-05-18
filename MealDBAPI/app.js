@@ -2,6 +2,7 @@ import { elements } from './base.js';
 import { Skeleton } from './Skeleton.js';
 
 class App {
+  APIKEY = 'Remember to change';
 
   constructor() {
     this.dataObj = [];
