@@ -6,7 +6,7 @@ class App {
   constructor() {
     // this.currency = 'USD';
     // this.api_url = ` https://prime.exchangerate-api.com/v5/${this.API_KEY}/latest/${currency}`;
-    // this.renderLoader(document.body);
+    this.renderLoader(document.body);
     Promise.all([
       this.getParse(1),
       this.getParse(10),

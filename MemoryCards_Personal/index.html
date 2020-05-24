@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Cards</title>
+    <!-- <script
+      src="https://kit.fontawesome.com/6b3dd5eb3a.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <link rel="stylesheet" href="main.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <button id="clear" class="clear btn">
+      <img src="./img/trash-closed-can.svg" />
+      Clear Cards
+    </button>
+
+    <div class="header__text">
+      <h1>
+        Memory Cards
+      </h1>
+      <button id="show" class="btn btn-small">
+        <img src="./img/signs.svg" />
+        Add New Card
+      </button>
+    </div>
+
+    <div id="cards-container" class="cards"></div>
+
+    <div class="nav">
+      <button id="prev" class="nav-button">
+        <img src="./img/arrows.svg" />
+      </button>
+      <p id="current">0/0</p>
+      <button id="next" class="nav-button">
+        <img src="./img/point-to.svg" />
+      </button>
+    </div>
+
+    <div id="add-container" class="add-container">
+      <div class="header__text">
+        <h1>
+          Add New Card
+        </h1>
+        <button id="close" class="btn btn-small">
+          X
+        </button>
+      </div>
+      <div class="form-group">
+        <label for="question">Question</label>
+        <textarea id="question" placeholder="Enter question..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="answer">Answer</label>
+        <textarea id="answer" placeholder="Enter answer..."></textarea>
+      </div>
+      <button id="add-card" class="btn">
+        <img src="./img/signs.svg" /> Add card
+      </button>
+    </div>
+  </body>
+</html>

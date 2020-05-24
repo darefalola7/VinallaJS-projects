@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lyrics Search</title>
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    /> -->
+    <script src="./axios.min.js" defer></script>
+    <link rel="stylesheet" href="main.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <div id="error"></div>
+    <template id="backdrop-modal">
+      <div class="backdrop">
+        <div class="modal"></div>
+      </div>
+    </template>
+    <header class="header">
+      <h1>LyricsSearch</h1>
+      <form class="form">
+        <input
+          type="text"
+          id="search"
+          class="search"
+          placeholder="Search for artists, songs, lyrics..."
+        />
+        <button type="submit" class="btn btn-search">
+          Search
+        </button>
+      </form>
+      <div class="layout_buttons">
+        <button id="list" class="btn">List</button>
+        <button id="grid" class="btn">Grid</button>
+      </div>
+    </header>
+    <div class="container">
+      <div class="indicators">
+        <button id="prev"><</button>
+        <div class="cards"></div>
+        <button id="next">></button>
+      </div>
+    </div>
+  </body>
+</html>
